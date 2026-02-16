@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes! ❤️</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, #ffd6d6, #ffe6f0);
+        }
+
+        /* Background videos */
+        .bg-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 0.35;
+        }
+
+        .bg-video.top {
+            opacity: 0.25;
+            mix-blend-mode: screen;
+        }
+
+        /* Popup card */
+        .popup-card {
+            position: relative;
+            z-index: 1;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(255, 51, 102, 0.3);
+            text-align: center;
+            max-width: 700px;
+            animation: fadeInScale 1s ease forwards;
+        }
+
+        /* Fade in + scale animation */
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .popup-card h1 {
+            font-size: 2.8rem;
+            color: #ff1a75;
+            margin-bottom: 20px;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .popup-card p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #ff3366;
+            margin-bottom: 30px;
+            animation: textFade 2s ease forwards;
+        }
+
+        @keyframes textFade {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            justify-items: center;
+            margin-bottom: 25px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            max-width: 180px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(255, 51, 102, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.05);
+        }
+
+        .popup-card button {
+            padding: 12px 30px;
+            font-size: 1rem;
+            border-radius: 25px;
+            border: none;
+            background: #ff3366;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.3s ease;
+        }
+
+        .popup-card button:hover {
+            transform: scale(1.1);
+            background: #ff6699;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background videos -->
+    <video class="bg-video" autoplay muted loop>
+        <source src="/videos/video_1.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <video class="bg-video top" autoplay muted loop>
+        <source src="/videos/video_2.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <!-- Popup card -->
+    <div class="popup-card">
+        <h1>Yay! ❤️ You said YES!</h1>
+        <p>My heart is overflowing with joy! 💖<br>
+            We are truly meant to be together and every moment with you feels magical! ✨<br>
+            I promise to make every day full of love and laughter with you ❤️</p>
+
+        <!-- Image grid -->
+        <div class="image-grid">
+            <img src="/images/sharv.jpeg" alt="Sharv">
+            <img src="/images/sharv.jpeg" alt="Sharv">
+            <img src="/images/sharv.jpeg" alt="Sharv">
+            <img src="/images/sharv.jpeg" alt="Sharv">
+            <img src="/images/sharv.jpeg" alt="Sharv">
+            <img src="/images/sharv.jpeg" alt="Sharv">
+        </div>
+
+        <button onclick="window.location.href='/'">Back to Home</button>
+    </div>
+
+</body>
+
+</html>
